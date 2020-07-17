@@ -11,7 +11,7 @@ function VignettePlane(props) {
             <mesh>
                 <planeBufferGeometry
                     attach="geometry"
-                    args={[viewport.width, viewport.height * 1.05]}
+                    args={[viewport.width, viewport.height]}
                 />
                 <vignetteMaterial
                     attach="material"

@@ -10,7 +10,7 @@ function Lightbars(props) {
 
     const {viewport} = useThree()
 
-    const height = viewport.height * 2
+    const height = viewport.height * 3
 
     const barsStore = [
         {

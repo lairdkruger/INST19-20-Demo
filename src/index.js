@@ -13,7 +13,9 @@ import Postprocessing from './components/postprocessing/Postprocessing'
 import Storm from './components/objects/Storm'
 import Lightbars from './components/objects/Lightbars'
 
-import ImagePlane from './components/media/ImagePlane'
+import BasicPlane from './components/media/BasicPlane'
+import DistortPlane from './components/media/DistortPlane'
+
 import TransitionPlane from './components/objects/TransitionPlane'
 import BackgroundPlane from './components/objects/BackgroundPlane'
 import VignettePlane from './components/objects/VignettePlane'
@@ -50,35 +52,17 @@ function App() {
 
                 {/* Stationary (Menu) Block */}
                 <Block factor={0.0} offset={0}>
-                    <Lightbars position={[0, 0, -20]} />
-                    <VignettePlane color={'#000000'} />
                     <HtmlContent portal={domContent}>
-                        {/* <div className="side-menu">
-                            <div className="title-box">
-                                <h1>inst.19-20</h1>
-                                <h1>an</h1>
-                                <h1>experimental</h1>
-                                <h1>album</h1>
-                            </div>
-                            <div className="title-box">
-                                <h1>by Jack Woodbury.</h1>
-                            </div>
-                            <div className="navigation-container">
-                                <div className="navigation-bar" />
-                                <div className="navigation-bar" />
-                                <div className="navigation-bar" />
-                            </div>
-                            <div className="title-box bottom">
-                                <h1>scroll to discover</h1>
-                            </div>
-                        </div> */}
                         <div className="side-text-box">
                             <h1 className="side-text">inst.19-20</h1>
                         </div>
                     </HtmlContent>
                 </Block>
 
+                {/* Lightbars */}
                 <Block factor={1.0} offset={0}>
+                    <Lightbars position={[0, 0, -5]} />
+                    <VignettePlane color={'#000000'} />
                     <HtmlContent portal={domContent} className="section-box">
                         <div className="album-image-box">
                             <img
@@ -96,7 +80,7 @@ function App() {
                             </HtmlContent>
                         }
                     >
-                        <ImagePlane
+                        <DistortPlane
                             src="media/images/album_cover.jpg"
                             image_id="album_cover"
                         />
@@ -106,6 +90,8 @@ function App() {
                 {/* First Paragraph Block */}
                 <Block factor={1.0} offset={1}>
                     <TransitionPlane />
+                    <VignettePlane color={'#000000'} />
+
                     <HtmlContent portal={domContent} className="paragraph-section">
                         <p className="paragraph">
                             The works collected on inst.19-20 are derived from two
@@ -142,8 +128,8 @@ function App() {
                     </HtmlContent>
                 </Block>
 
+                {/* Short Intro */}
                 <Block factor={1.0} offset={2}>
-                    <BackgroundPlane position={[0, 0, 0]} />
                     <HtmlContent portal={domContent} className="paragraph-section-right">
                         <p className="paragraph">
                             From here will be the different sections exploring the
@@ -153,20 +139,112 @@ function App() {
                     </HtmlContent>
                 </Block>
 
+                {/* Corrose  */}
                 <Block factor={1.0} offset={3}>
-                    <BackgroundPlane position={[0, 0, 0]} />
                     <HtmlContent portal={domContent} className="paragraph-section-right">
-                        <p className="paragraph">First installations for example.</p>
+                        <p className="paragraph">Paragraphs on Corrose.</p>
+
+                        <div className="corrose-image-box">
+                            <img
+                                data-id="corrose-image"
+                                className="image-plane"
+                                src="media/images/corrose.jpg"
+                                alt="album cover for Jack Woodbury's debut album inst.19-20"
+                            />
+                        </div>
+                    </HtmlContent>
+
+                    <Suspense
+                        fallback={
+                            <HtmlContent>
+                                <h1>Loading Image</h1>
+                            </HtmlContent>
+                        }
+                    >
+                        <BasicPlane
+                            src="media/images/corrose.jpg"
+                            image_id="corrose-image"
+                        />
+                    </Suspense>
+                </Block>
+
+                {/* A Tree Falls */}
+                <Block factor={1.0} offset={5}>
+                    <HtmlContent portal={domContent} className="paragraph-section-right">
+                        <p className="paragraph">Paragraphs on A Tree Falls.</p>
+
+                        <div className="atf-image-box">
+                            <img
+                                data-id="atf-image"
+                                className="image-plane"
+                                src="media/images/a_tree_falls.jpg"
+                                alt="album cover for Jack Woodbury's debut album inst.19-20"
+                            />
+                        </div>
+                    </HtmlContent>
+
+                    <Suspense
+                        fallback={
+                            <HtmlContent>
+                                <h1>Loading Image</h1>
+                            </HtmlContent>
+                        }
+                    >
+                        <BasicPlane
+                            src="media/images/a_tree_falls.jpg"
+                            image_id="atf-image"
+                        />
+                    </Suspense>
+                </Block>
+
+                <Block factor={1.0} offset={7}>
+                    <HtmlContent portal={domContent} className="paragraph-section-right">
+                        <p className="paragraph">Infomation and background on Jack</p>
                     </HtmlContent>
                 </Block>
 
-                <Block factor={-1.0} offset={3}>
-                    <Storm position={[0, 0, 0]} />
+                <Block factor={-1.0} offset={7}>
+                    <HtmlContent portal={domContent} className="section-box">
+                        <div className="profile-image-box">
+                            <img
+                                data-id="profile-image"
+                                className="image-plane"
+                                src="media/images/profile.jpg"
+                                alt="album cover for Jack Woodbury's debut album inst.19-20"
+                            />
+                        </div>
+                    </HtmlContent>
+                    <Suspense
+                        fallback={
+                            <HtmlContent>
+                                <h1>Loading Image</h1>
+                            </HtmlContent>
+                        }
+                    >
+                        <BasicPlane
+                            src="media/images/profile.jpg"
+                            image_id="profile-image"
+                        />
+                    </Suspense>
                 </Block>
 
-                <Suspense fallback={null}>
+                <Block factor={1.0} offset={9}>
+                    <VignettePlane color={'#000000'} />
+                    <TransitionPlane upsideDown={true} />
+
+                    <HtmlContent portal={domContent} className="paragraph-section-right">
+                        <p className="paragraph">Links to buy album.</p>
+                    </HtmlContent>
+                </Block>
+
+                {/* Lightbars */}
+                <Block factor={1.0} offset={10}>
+                    <Lightbars position={[0, 0, -5]} />
+                </Block>
+
+                {/* <Suspense fallback={null}>
                     <Postprocessing />
-                </Suspense>
+                </Suspense> */}
             </Canvas>
 
             {/* container with events */}

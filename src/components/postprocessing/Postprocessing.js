@@ -17,13 +17,14 @@ export default function Postprocessing() {
 
         const bloomEffect = new BloomEffect({
             luminanceThreshold: 0.0,
-            intensity: 0.2,
+            intensity: 0.75,
             luminanceSmoothing: 0.0025,
         })
 
         const noiseEffect = new NoiseEffect({premultiply: true})
 
-        const effectPass = new EffectPass(camera, bloomEffect)
+        const effectPass = new EffectPass(camera, noiseEffect, bloomEffect)
+
         effectPass.renderToScreen = true
         composer.addPass(effectPass)
 

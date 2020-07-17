@@ -7,17 +7,17 @@ function TransitionPlane(props) {
     const {viewport} = useThree()
 
     return (
-        <group {...props}>
-            <mesh>
+        <group>
+            <mesh scale-y={props.upsideDown ? -1 : 1}>
                 <planeBufferGeometry
                     attach="geometry"
-                    args={[viewport.width, viewport.height - 0.2]}
+                    args={[viewport.width, viewport.height * 1.02 - 0.2]}
                 />
                 <transitionMaterial
                     attach="material"
                     uColor={props.color}
                     toneMapped={false}
-                    transparent
+                    transparent={true}
                 />
             </mesh>
         </group>
