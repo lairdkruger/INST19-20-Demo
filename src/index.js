@@ -15,6 +15,7 @@ import Lightbars from './components/objects/Lightbars'
 
 import BasicPlane from './components/media/BasicPlane'
 import DistortPlane from './components/media/DistortPlane'
+import TwoImagePlane from './components/media/TwoImagePlane'
 
 import TransitionPlane from './components/objects/TransitionPlane'
 import BackgroundPlane from './components/objects/BackgroundPlane'
@@ -161,8 +162,9 @@ function App() {
                             </HtmlContent>
                         }
                     >
-                        <BasicPlane
-                            src="media/images/corrose.jpg"
+                        <TwoImagePlane
+                            src="media/images/black.png"
+                            src_prev="media/images/corrose.jpg"
                             image_id="corrose-image"
                         />
                     </Suspense>
@@ -190,9 +192,10 @@ function App() {
                             </HtmlContent>
                         }
                     >
-                        <BasicPlane
-                            src="media/images/a_tree_falls.jpg"
-                            image_id="atf-image"
+                        <TwoImagePlane
+                            src="media/images/black.png"
+                            src_prev="media/images/a_tree_falls.jpg"
+                            image_id="corrose-image"
                         />
                     </Suspense>
                 </Block>
