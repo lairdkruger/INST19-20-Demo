@@ -3,8 +3,6 @@ import {Color} from 'three'
 import {useThree} from 'react-three-fiber'
 import Lightbar from './Lightbar'
 
-import state from '../../store'
-
 function Lightbars(props) {
     const bars = useRef()
 

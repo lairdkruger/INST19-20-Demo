@@ -8,9 +8,7 @@ import HtmlContent from './components/HtmlContent'
 import state from './store'
 import './styles.css'
 import FlatLighting from './components/lighting/FlatLighting'
-import Postprocessing from './components/postprocessing/Postprocessing'
 
-import Storm from './components/objects/Storm'
 import Lightbars from './components/objects/Lightbars'
 
 import BasicPlane from './components/media/BasicPlane'
@@ -18,7 +16,6 @@ import DistortPlane from './components/media/DistortPlane'
 import TwoImagePlane from './components/media/TwoImagePlane'
 
 import TransitionPlane from './components/objects/TransitionPlane'
-import BackgroundPlane from './components/objects/BackgroundPlane'
 import VignettePlane from './components/objects/VignettePlane'
 
 function App() {
@@ -124,7 +121,7 @@ function App() {
                             Conference in Melbourne in 2019. A paper discussing the work
                             was published at the International Computer Music Conference
                             in New York in 2019 (written in collaboration with composer Mo
-                            Zareei).
+                            Zareei). - rattle.co.nz
                         </p>
                     </HtmlContent>
                 </Block>
@@ -141,15 +138,52 @@ function App() {
                 </Block>
 
                 {/* Corrose  */}
+                {/* Corrose Title  */}
                 <Block factor={1.0} offset={3}>
                     <HtmlContent portal={domContent} className="paragraph-section-right">
-                        <p className="paragraph">Paragraphs on Corrose.</p>
+                        <p className="corrose-title">CORROSE</p>
+                    </HtmlContent>
+                </Block>
 
-                        <div className="corrose-image-box">
+                <Block factor={-1.5} offset={3}>
+                    <HtmlContent portal={domContent} className="section-box">
+                        <div className="project-main-image-box">
+                            <img
+                                data-id="corrose-main-image"
+                                className="image-plane"
+                                src="media/images/corrose_main.jpg"
+                                alt="album cover for Jack Woodbury's debut album inst.19-20"
+                            />
+                        </div>
+                    </HtmlContent>
+                    <Suspense
+                        fallback={
+                            <HtmlContent>
+                                <h1>Loading Image</h1>
+                            </HtmlContent>
+                        }
+                    >
+                        <TwoImagePlane
+                            src="media/images/black.png"
+                            src_prev="media/images/corrose_main.jpg"
+                            image_id="corrose-main-image"
+                            continue
+                        />
+                    </Suspense>
+                </Block>
+
+                {/* Corrose Infomation  */}
+                <Block factor={1.0} offset={4}>
+                    <HtmlContent portal={domContent} className="paragraph-section-right">
+                        <p className="paragraph">
+                            First paragraph with a bit of info about Corrose.
+                        </p>
+
+                        <div className="corrose-image-1">
                             <img
                                 data-id="corrose-image"
                                 className="image-plane"
-                                src="media/images/corrose.jpg"
+                                src="media/images/corrose_2.jpg"
                                 alt="album cover for Jack Woodbury's debut album inst.19-20"
                             />
                         </div>
@@ -164,22 +198,59 @@ function App() {
                     >
                         <TwoImagePlane
                             src="media/images/black.png"
-                            src_prev="media/images/corrose.jpg"
+                            src_prev="media/images/corrose_2.jpg"
                             image_id="corrose-image"
                         />
                     </Suspense>
                 </Block>
 
-                {/* A Tree Falls */}
-                <Block factor={1.0} offset={5}>
+                {/* A Tree Falls  */}
+                {/* A Tree Falls Title  */}
+                <Block factor={1.0} offset={6}>
                     <HtmlContent portal={domContent} className="paragraph-section-right">
-                        <p className="paragraph">Paragraphs on A Tree Falls.</p>
+                        <p className="corrose-title">A Tree Falls</p>
+                    </HtmlContent>
+                </Block>
 
-                        <div className="atf-image-box">
+                <Block factor={-1.5} offset={6}>
+                    <HtmlContent portal={domContent} className="section-box">
+                        <div className="project-main-image-box">
+                            <img
+                                data-id="corrose-main-image"
+                                className="image-plane"
+                                src="media/images/atf_main.jpg"
+                                alt="album cover for Jack Woodbury's debut album inst.19-20"
+                            />
+                        </div>
+                    </HtmlContent>
+                    <Suspense
+                        fallback={
+                            <HtmlContent>
+                                <h1>Loading Image</h1>
+                            </HtmlContent>
+                        }
+                    >
+                        <TwoImagePlane
+                            src="media/images/black.png"
+                            src_prev="media/images/atf_main.jpg"
+                            image_id="corrose-main-image"
+                            continue
+                        />
+                    </Suspense>
+                </Block>
+
+                {/* A Tree Falls Infomation  */}
+                <Block factor={1.0} offset={7}>
+                    <HtmlContent portal={domContent} className="paragraph-section-right">
+                        <p className="paragraph">
+                            First paragraph with a bit of info about A Tree Falls.
+                        </p>
+
+                        <div className="atf-image-1">
                             <img
                                 data-id="atf-image"
                                 className="image-plane"
-                                src="media/images/a_tree_falls.jpg"
+                                src="media/images/atf_1.jpg"
                                 alt="album cover for Jack Woodbury's debut album inst.19-20"
                             />
                         </div>
@@ -194,19 +265,20 @@ function App() {
                     >
                         <TwoImagePlane
                             src="media/images/black.png"
-                            src_prev="media/images/a_tree_falls.jpg"
-                            image_id="corrose-image"
+                            src_prev="media/images/atf_1.jpg"
+                            image_id="atf-image"
                         />
                     </Suspense>
                 </Block>
 
-                <Block factor={1.0} offset={7}>
+                {/* Jack */}
+                <Block factor={1.0} offset={9}>
                     <HtmlContent portal={domContent} className="paragraph-section-right">
                         <p className="paragraph">Infomation and background on Jack</p>
                     </HtmlContent>
                 </Block>
 
-                <Block factor={-1.0} offset={7}>
+                <Block factor={-1.0} offset={9}>
                     <HtmlContent portal={domContent} className="section-box">
                         <div className="profile-image-box">
                             <img
@@ -231,7 +303,8 @@ function App() {
                     </Suspense>
                 </Block>
 
-                <Block factor={1.0} offset={9}>
+                {/* Links To Buy */}
+                <Block factor={1.0} offset={11}>
                     <VignettePlane color={'#000000'} />
                     <TransitionPlane upsideDown={true} />
 
@@ -241,7 +314,7 @@ function App() {
                 </Block>
 
                 {/* Lightbars */}
-                <Block factor={1.0} offset={10}>
+                <Block factor={1.0} offset={12}>
                     <Lightbars position={[0, 0, -5]} />
                 </Block>
 

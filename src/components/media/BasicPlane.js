@@ -1,8 +1,6 @@
 import React, {useRef} from 'react'
 import * as THREE from 'three'
-import {useLoader, useFrame, useThree} from 'react-three-fiber'
-import state from '../../store'
-import lerp from 'lerp'
+import {useLoader} from 'react-three-fiber'
 
 import './materials/BasicMaterial'
 

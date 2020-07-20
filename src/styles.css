@@ -170,15 +170,35 @@ body {
     overflow: auto;
 }
 
+.corrose-title {
+    font-family: 'Bifocals', sans-serif;
+    font-size: 8vw;
+    line-height: 8vw;
+    font-weight: 400;
+    color: #ffffff;
+}
+
 .image-box {
     width: 400px;
     height: 400px;
     position: absolute;
 }
 
-.corrose-image-box {
-    width: 400px;
-    height: 400px;
+.project-main-image-box {
+    width: 90vw;
+    height: auto;
+}
+
+.corrose-image-1 {
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    right: 12.5%;
+}
+
+.atf-image-1 {
+    width: 33vw;
+    height: auto;
     position: absolute;
     right: 12.5%;
 }

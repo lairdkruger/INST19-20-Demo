@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import * as THREE from 'three'
-import {useLoader, useFrame, useThree} from 'react-three-fiber'
+import {useLoader, useFrame} from 'react-three-fiber'
 import state from '../../store'
 import lerp from 'lerp'
 import {useBlock} from '../Blocks'
@@ -33,10 +33,16 @@ function TwoImagePlane({color = 'white', ...props}) {
 
     useFrame(() => {
         const {top} = state
-        const offsetMapped = Math.max(
-            0,
-            (offset * viewportHeight - top.current) / viewportHeight
-        )
+        let offsetMapped = 0
+
+        if (props.continue) {
+            offsetMapped = (offset * viewportHeight - top.current) / viewportHeight
+        } else {
+            offsetMapped = Math.max(
+                0,
+                (offset * viewportHeight - top.current) / viewportHeight
+            )
+        }
 
         // same lerp used in blocks.js
         material.current.uMixValue = lerp(material.current.uMixValue, offsetMapped, 0.1)

@@ -1,4 +1,4 @@
-import {ShaderMaterial, Color} from 'three'
+import {ShaderMaterial} from 'three'
 import {extend} from 'react-three-fiber'
 
 class BasicMaterial extends ShaderMaterial {

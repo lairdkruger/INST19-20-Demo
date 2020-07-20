@@ -8,21 +8,30 @@ import state from '../store'
 // https://tympanus.net/codrops/2019/12/16/scroll-refraction-and-shader-effects-in-three-js-and-react/
 
 // Offset: section index (eg: offset = 2 will be the third content section)
-// Factor: sets block's speed and direction when page is scrolled
+// Factor: sets block's speed when page is scrolled
 
 const offsetContext = createContext(0)
 
 function Block({children, offset, factor, ...props}) {
     // Fetch parent offset and the height of a single section
-    const {offset: parentOffset, sectionHeight, aspect} = useBlock()
+    const {offset: parentOffset, sectionHeight, aspect, canvasHeight} = useBlock()
     const ref = useRef()
     offset = offset !== undefined ? offset : parentOffset
+
     // Runs every frame and lerps the inner block into its place
     useFrame(() => {
         const curY = ref.current.position.y
-        const curTop = state.top.current / aspect
+        const curTop = Math.min(
+            state.top.current / aspect,
+            canvasHeight * (state.pages - 1)
+        )
+
         ref.current.position.y = lerp(curY, (curTop / state.zoom) * factor, 0.1)
     })
+
+    setInterval(function () {
+        // console.log(canvasHeight * (state.pages - 1))
+    }, 1000)
 
     return (
         <offsetContext.Provider value={offset}>

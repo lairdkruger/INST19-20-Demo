@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useRef, useState} from 'react'
 import {useThree, useFrame} from 'react-three-fiber'
 import lerp from 'lerp'
 
