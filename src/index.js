@@ -347,7 +347,7 @@ function App() {
                         <div className="side-text-box-right">
                             <h1 className="side-text-right">about jack</h1>
                         </div>
-                        <p className="paragraph">
+                        <p className="jack-paragraph">
                             Jack is an electro-acoustic composer and audio engineer based
                             in Wellington, New Zealand. His current practice engages with
                             the notion of compositional influence through audiovisual
@@ -355,7 +355,7 @@ function App() {
                             (Creative Practice) in Music at the Victoria University of
                             Wellington (New Zealand School of Music – Te Kōkī).
                         </p>
-                        <p className="paragraph">
+                        <p className="jack-paragraph">
                             His work has been presented in the UK, USA, Australia, and New
                             Zealand.
                         </p>
@@ -408,7 +408,7 @@ function App() {
 
                 {/* Lightbars */}
                 <Block factor={1.0} offset={17}>
-                    <Lightbars position={[0, 0, -5]} />
+                    <Lightbars position={[0, 0, -5]} white />
                 </Block>
 
                 {/* <Suspense fallback={null}>

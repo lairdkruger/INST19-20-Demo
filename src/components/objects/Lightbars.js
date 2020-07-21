@@ -234,12 +234,132 @@ function Lightbars(props) {
         },
     ]
 
+    const barsStore_White = [
+        {
+            id: 'bar1',
+            width: viewport.width / 10,
+            height: height,
+            color: new Color('#DCDCDC'),
+        },
+        {
+            id: 'bar2',
+            width: viewport.width / 8,
+            height: height,
+            color: new Color('#C0C0C0'),
+        },
+        {
+            id: 'bar3',
+            width: viewport.width / 7,
+            height: height,
+            color: new Color('#989898'),
+        },
+        {
+            id: 'bar4',
+            width: viewport.width / 4,
+            height: height,
+            color: new Color('#696969'),
+        },
+        {
+            id: 'bar5',
+            width: viewport.width / 1.5,
+            height: height,
+            color: new Color('#343434'),
+        },
+        {
+            id: 'bar6',
+            width: viewport.width / 1.3,
+            height: height,
+            color: new Color('#121212'),
+        },
+
+        {
+            id: 'bar7',
+            width: viewport.width / 12,
+            height: height,
+            color: new Color('#D3D3D3'),
+        },
+        {
+            id: 'bar8',
+            width: viewport.width / 9,
+            height: height,
+            color: new Color('#BEBEBE'),
+        },
+        {
+            id: 'bar9',
+            width: viewport.width / 6,
+            height: height,
+            color: new Color('#808080'),
+        },
+        {
+            id: 'bar10',
+            width: viewport.width / 3,
+            height: height,
+            color: new Color('#555555'),
+        },
+        {
+            id: 'bar11',
+            width: viewport.width / 1.5,
+            height: height,
+            color: new Color('#363636'),
+        },
+        {
+            id: 'bar12',
+            width: viewport.width / 1.3,
+            height: height,
+            color: new Color('#262626'),
+        },
+        {
+            id: 'bar13',
+            width: viewport.width / 13,
+            height: height,
+            color: new Color('#CDCDCD'),
+        },
+        {
+            id: 'bar14',
+            width: viewport.width / 8,
+            height: height,
+            color: new Color('#D6D6D6'),
+        },
+        {
+            id: 'bar15',
+            width: viewport.width / 5,
+            height: height,
+            color: new Color('#909090'),
+        },
+        {
+            id: 'bar16',
+            width: viewport.width / 3,
+            height: height,
+            color: new Color('#707070'),
+        },
+        {
+            id: 'bar17',
+            width: viewport.width / 1.5,
+            height: height,
+            color: new Color('#505050'),
+        },
+        {
+            id: 'bar18',
+            width: viewport.width / 1.3,
+            height: height,
+            color: new Color('#303030'),
+        },
+    ]
+
     let barsReturned
 
     if (props.green) {
         barsReturned = (
             <group ref={bars} {...props}>
                 {barsStore_Green.map((bar) => (
+                    <Lightbar key={bar.id} bar={bar} />
+                ))}
+            </group>
+        )
+    } else if (props.white) {
+        barsReturned = (
+            <group ref={bars} {...props}>
+                {barsStore_White.map((bar) => (
                     <Lightbar key={bar.id} bar={bar} />
                 ))}
             </group>
