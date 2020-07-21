@@ -62,7 +62,7 @@ function App() {
                     <Lightbars position={[0, 0, -5]} />
                     <VignettePlane color={'#000000'} />
                     <HtmlContent portal={domContent} className="section-centered">
-                        <p className="scroll-text">scroll to learn more</p>
+                        <p className="scroll-text">scroll</p>
                         <div className="album-image-box">
                             <img
                                 data-id="album_cover"
